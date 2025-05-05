@@ -1,0 +1,88 @@
+/* CONFIGURAÇÕES INICIAIS */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+:root
+{
+    --primary-color: #c1c1c1;
+    --hover-color: rgb(145, 30, 30);
+    --accent-color: rgb(42, 111, 190);
+    --text-color: rgb(17, 0, 0);
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*isso ajuda a evitar conflitos no margin e padding*/
+}
+
+html
+{
+    font-family: "Fredoka", sans-serif;
+    color: var(--text-color);
+}
+
+body
+{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--primary-color);
+}
+
+main
+{
+    padding: min(5em, 7%);
+}
+
+main p
+{
+    margin-top: .35em;
+}
+
+/* NAVBAR CONFIGURAÇÃO */
+nav
+{
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var (--hover-color);
+}
+
+nav ul
+{
+    list-style: none;
+    display: flex;
+}
+nav .home-il
+{
+    margin-right: auto;
+}
+
+nav a
+{
+    display: flex;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1em 2em;
+    transition: background-color 150ms ease;
+}
+
+nav a:hover
+{
+    background-color: var(--hover-color);
+}
+
+nav a.active-link
+{
+    border-bottom: 2px solid var(--text-color);
+}
+
+nav a.accent-link
+{
+    background-color: var(--accent-color);
+}
+
+/*
+    nav li
+    {
+        display:flex;
+    }
+*/
