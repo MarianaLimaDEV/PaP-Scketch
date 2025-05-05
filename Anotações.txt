@@ -1,31 +1,8 @@
 Anotando os comandos que fiz no git bash pra eu me lembrar quais sao os comandos necessários para fazer os commits, ainda nao decorei 
+$ git add . - add mudanças
 
-Maria@Snezhnaya MINGW64 /a/PaP-Scketch (main)
-$ git add .
+$ git status - op. so se quiser 
 
-Maria@Snezhnaya MINGW64 /a/PaP-Scketch (main)
-$ git status
-On branch main
-Your branch is up to date with 'origin/main'.
+$ git commit -m "Criando index HTML" - cria o commit
 
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        new file:   Index.html
-
-
-Maria@Snezhnaya MINGW64 /a/PaP-Scketch (main)
-$ git commit -m "Criando index HTML"
-[main 3551fcb] Criando index HTML
- 1 file changed, 11 insertions(+)
- create mode 100644 Index.html
-
-Maria@Snezhnaya MINGW64 /a/PaP-Scketch (main)
-$ git push origin main
-Enumerating objects: 4, done.
-Counting objects: 100% (4/4), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 441 bytes | 441.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
-To https://github.com/MarianaLimaDEV/PaP-Scketch.git
-   b1f87fc..3551fcb  main -> main
+$ git push origin main - publica o commit
