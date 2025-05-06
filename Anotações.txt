@@ -43,3 +43,28 @@ HTML sticky notes:
 <time>
 
 If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size:
+
+
+px (Pixels):
+
+Unidade fixa e absoluta.
+Representa um ponto na tela, mas o tamanho pode variar dependendo da densidade de pixels do dispositivo.
+vh (Viewport Height):
+
+Unidade relativa à altura da viewport (área visível da janela do navegador).
+1vh equivale a 1% da altura da viewport.
+dvh (Dynamic Viewport Height):
+
+Similar ao vh, mas ajusta-se dinamicamente em dispositivos móveis para considerar mudanças na altura da viewport (como quando a barra de navegação aparece ou desaparece).
+em:
+
+Unidade relativa ao tamanho da fonte do elemento pai.
+Exemplo: Se o tamanho da fonte do pai for 16px, 1em equivale a 16px.
+% (Porcentagem):
+
+Unidade relativa ao tamanho do elemento pai.
+Exemplo: width: 50% define a largura como 50% do elemento pai.
+min():
+
+Função CSS que escolhe o menor valor entre os argumentos fornecidos.
+Exemplo: min(5em, 7%) usa o menor valor entre 5em e 7%.
