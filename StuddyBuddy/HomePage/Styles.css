@@ -13,6 +13,8 @@
 {
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
     box-sizing: border-box; /*box-sizing: border-box ajusta o modelo de caixa para incluir padding e border no tamanho total do elemento*/
 }
 
@@ -39,6 +41,7 @@ main p
 {
     margin-top: .35em;
 }
+
 
 /* ------------------------------------------ */
 
