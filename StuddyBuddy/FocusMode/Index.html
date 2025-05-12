@@ -20,17 +20,25 @@
 
     <body>
         <div id="pomodoro">
+
             <h1>Pomodoro Timer</h1>
-            <div id="timer">
-                <span id="minutes">25</span>:<span id="seconds">00</span>
+            <div class="timer-container">
+                <div id="timer">25:00</div>
+                <img src="../gif-personalizado.gif" alt="Pomodoro GIF" class="custom-gif">
             </div>
-            <div class="tenor-gif-embed" data-postid="27093068" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/tkthao219-peach-goma-gif-27093068">Tkthao219 Peach Sticker</a>from <a href="https://tenor.com/search/tkthao219-stickers">Tkthao219 Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-            <button id="start">Start</button>
-            <button id="reset">Reset</button>
-            <br>
-            <button class="button1" id="CountDown">Countdown</button>
-            <button class="button1" id="Cronometer">Cronometer</button>
-            <button class="button1" id="WolrdClock">Clock</button>
+
+             <!-- Contêiner dos botões -->
+            <div class="mode-buttons-container">
+                <button id="start" class="mode-button">Start</button>
+                <button id="reset" class="mode-button">Reset</button>
+            </div>
+
+            <div class="page-buttons-container">
+                <button id="countdown" class="page-button">Countdown</button>
+                <button id="cronometer" class="page-button">Cronometer</button>
+                <button id="worldclock" class="page-button">Clock</button>
+            </div>
+
         </div>
     </body>
 

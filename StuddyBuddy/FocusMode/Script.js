@@ -4,14 +4,12 @@ let timeLeft = 25 * 60; // 25 minutes in seconds
 
 const startButton = document.getElementById('start');
 const resetButton = document.getElementById('reset');
-const minutesDisplay = document.getElementById('minutes');
-const secondsDisplay = document.getElementById('seconds');
+const timerDisplay = document.getElementById('timer');
 
 function updateTimerDisplay() {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
-    minutesDisplay.textContent = String(minutes).padStart(2, '0');
-    secondsDisplay.textContent = String(seconds).padStart(2, '0');
+    timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
 function startTimer() {
