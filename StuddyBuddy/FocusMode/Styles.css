@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
-:root {
-    --primary-color: #272832;
+:root
+{
+    --background-color: #272832;
     --hover-color: #7e7e7e;
     --accent-color: #6a6a6a;
     --text-color: #c9c9c9;
 }
 
-* {
+*
+{
     margin: 0;
     padding: 0;
     list-style: none;
@@ -15,15 +17,17 @@
     box-sizing: border-box;
 }
 
-html {
+html
+{
     font-family: "Fredoka", sans-serif;
     color: var(--text-color);
     scroll-behavior: smooth;
 }
 
-body {
+body
+{
     font-family: "Fredoka", sans-serif;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     color: var(--text-color);
     display: flex;
     justify-content: center;
@@ -32,7 +36,8 @@ body {
     margin: 0;
 }
 
-#pomodoro {
+#pomodoro
+{
     text-align: center;
     background-color: #4f4f5a;
     padding: 2em;
@@ -43,14 +48,16 @@ body {
     margin: 2em auto;
 }
 
-.timer-container {
+.timer-container
+{
     position: relative;
     display: inline-block;
     width: 25em;
     height: 25em;
 }
 
-#timer {
+#timer
+{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -62,14 +69,16 @@ body {
     z-index: 10;
 }
 
-.custom-gif {
+.custom-gif
+{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
-button {
+button
+{
     color: #fff;
     border: none;
     padding: 0.5em 1em;
@@ -81,25 +90,29 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+button:hover
+{
     background-color: var(--hover-color);
 }
 
-.mode-buttons-container {
+.BigButton
+{
     display: flex;
     justify-content: space-around;
     gap: 1em;
     margin-top: 1em;
 }
 
-.page-buttons-container {
+.BiggerButtons
+{
     display: flex;
     justify-content: space-around;
     gap: 1em;
     margin-top: 1.5em;
 }
 
-.mode-button {
+.mode-button
+{
     background-color: #767676;
 }
 
