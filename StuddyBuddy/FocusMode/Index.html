@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
     <head>
 
         <meta charset="UTF-8">
@@ -19,6 +20,17 @@
     </head>
 
     <body>
+        <!-- Navbar -->
+        <nav id="navbar">
+            <ul>
+                <li><a href="../HomePage/Index.html">Home</a></li>
+                <li><a href="../HomePage/about.html">About</a></li>
+                <li><a href="../HomePage/settings.html">Settings</a></li>
+                <li><a href="../HomePage/account.html">Account</a></li>
+                <li><a class="accent-link" href="../HomePage/open.html">Open Now</a></li>
+            </ul>
+        </nav>
+
         <div id="Pomodoro">
 
             <h1>Pomodoro Timer</h1>
@@ -31,15 +43,40 @@
              <!-- Contêiner dos botões -->
             <div class="BiggerButtons">
                 <button id="start" class="BigButton">Start</button>
-                <button id="reset" class="BigButton">Reset</button>
+                <button id="reset" class="BigButton">&#x21bb;</button> <!-- Botão de reset com símbolo -->
             </div>
 
             <div class="SmallerButtons">
                 <button id="countdown" class="SmallButton">Countdown</button>
                 <button id="cronometer" class="SmallButton">Cronometer</button>
                 <button id="worldclock" class="SmallButton">Clock</button>
+                <button id="shortBreak" class="SmallButton">Pausa Pequena</button> <!-- Novo botão -->
+                <button id="longBreak" class="SmallButton">Pausa Grande</button> <!-- Novo botão -->
             </div>
 
+            <!-- Contêiner para as bolinhas -->
+            <div id="progressDots" class="progress-dots"></div>
+
+        </div>
+
+        <!-- Task List Section -->
+        <div id="TaskList">
+            <h2>Task List</h2>
+            <div class="task-input-container">
+                <input type="text" id="taskInput" placeholder="Add a new task..." />
+                <button id="addTaskButton" class="SmallButton">Add</button>
+            </div>
+            <ul id="taskList"></ul>
+        </div>
+
+        <!-- Spotify Popup -->
+        <div id="spotifyPopup" class="popup hidden">
+            <div class="popup-content">
+                <h2>Connect to Spotify</h2>
+                <p>Enjoy your favorite music while studying!</p>
+                <button id="connectSpotify" class="SmallButton">Connect</button>
+                <button id="closePopup" class="SmallButton">Close</button>
+            </div>
         </div>
     </body>
 
