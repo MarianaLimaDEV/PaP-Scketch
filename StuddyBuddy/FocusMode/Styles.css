@@ -24,19 +24,21 @@ html
     scroll-behavior: smooth;
 }
 
-/* Layout principal: Pomodoro e Task List lado a lado */
-body
-{
+/* Layout principal: Pomodoro e Task List em coluna */
+body {
     font-family: "Fredoka", sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2em;
-    height: 100vh;
+    display: block; /* Muda de flex para block */
     margin: 0;
-    padding: 2em;
+    padding: 0;
+}
+
+/* Espaçamento entre as seções principais */
+#Pomodoro, #TaskList {
+    margin: 2em auto;
+    width: 95%;
+    max-width: 600px;
 }
 
 #Pomodoro
@@ -46,9 +48,6 @@ body
     padding: 2em;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 600px;
-    margin: 2em auto;
 }
 
 /* Task List Container */
@@ -57,8 +56,6 @@ body
     padding: 2em;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 400px;
     color: var(--text-color);
 }
 
@@ -144,7 +141,7 @@ body
     z-index: 10; /*nao sei a funçao*/
 }
 
-.custom-gif
+custom-gif
 {
     width: 100%;
     height: 100%;
@@ -176,27 +173,24 @@ button:hover
     padding: 0.8em 1.5em;
 }
 
-.BiggerButtons
-{
+.BiggerButtons,
+.SmallerButtons {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Centraliza os botões */
     gap: 1em;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.BiggerButtons {
     margin-top: 1.5em;
 }
 
-.SmallButton
-{
-    background-color: #bbbb;
-    padding: 0.5em 1em;
-    font-size: 1em;
-}
-
-.SmallerButtons
-{
-    display: flex;
-    justify-content: space-around;
-    gap: 0.8em;
+.SmallerButtons {
     margin-top: 1em;
+    gap: 0.8em;
 }
 
 .SmallerButtons button:hover
@@ -228,7 +222,7 @@ button:hover
 /* Navbar */
 nav {
     background-color: var(--background-color);
-    padding: 1em;
+    padding: 1em 0;
     border-bottom: 1px solid var(--hover-color);
     position: sticky;
     top: 0;
@@ -237,8 +231,9 @@ nav {
 
 nav ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 2em;
     list-style: none;
     margin: 0;
     padding: 0;
