@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "PaP-Scketch",
+			"path": "."
+		},
+		{
+			"name": "GrimorieBot",
+			"path": "../GrimorieBot"
+		}
+	],
+	"settings": {}
+}

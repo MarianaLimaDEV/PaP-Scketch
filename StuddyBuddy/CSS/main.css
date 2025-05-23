@@ -148,7 +148,7 @@ nav a.accent-link {
 /*--------- SEÇÃO DE INFORMAÇÕES LEGAIS ---------*/
 #info-section {
   padding: 2em 0;
-  background: #487c64;
+  background: #4747bd;
 }
 #info-section .info-container {
   max-width: 900px;
@@ -161,7 +161,7 @@ nav a.accent-link {
 #info-section .info-card {
   flex: 1 1 220px;
   min-width: 220px;
-  background: #1b1b6b;
+  background: #111169;
   border-radius: 16px;
   padding: 2em 1.5em;
   box-shadow: 0 2px 16px rgb(119, 71, 71);
@@ -196,7 +196,7 @@ nav a.accent-link {
 }
 /*--------- FOOTER ---------*/
 footer {
-  background: #487c64;
+  background: #4747bd;
   color: #dd8282;
   padding: 0;
   margin-top: 3em;
@@ -293,4 +293,4 @@ footer .footer-inner nav h4 {
   }
 }
 
-/*# sourceMappingURL=Styles.css.map */
+/*# sourceMappingURL=main.css.map */

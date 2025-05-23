@@ -1,0 +1,429 @@
+/*--------- CONFIGURAÇÕES INICIAIS ---------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+// Variáveis SCSS
+$primary-color: #e0cf2e;
+$text-color: #49ad56;
+$hover-color: #81d170;
+$accent-color: #32628f;
+
+$bg-dark: #487c64;
+$bg-card: #1b1b6b;
+$white: #c54848;
+$white-soft: #dd8282;
+$gray-soft: #c9c9c9;
+$shadow-light: rgb(119, 71, 71);
+$shadow-strong: #81bea5;
+$footer-bg: $bg-dark;
+$footer-btn-bg: rgb(5, 207, 15);
+$footer-btn-bg-hover: rgba(177, 44, 44, 0.18);
+
+@mixin reset
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+@mixin base
+{
+  font-family: "Fredoka", sans-serif;
+  color: $text-color;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-weight: normal;
+}
+
+*
+{
+  @include reset;
+}
+
+html, body
+{
+  @include base;
+}
+
+h1, h2, h3, h4, h5, h6, p
+{
+  font-weight: normal;
+}
+
+main
+{
+  padding: min(5em, 7%);
+
+  p
+  {
+    margin-top: 0.35em;
+  }
+}
+
+/*--------- NAVBAR ---------*/
+
+nav
+{
+  background-color: $primary-color;
+  border-bottom: 1px solid $hover-color;
+
+  ul
+  {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .home-li
+  {
+    margin-right: auto;
+  }
+
+  li
+  {
+    display: flex;
+  }
+
+  a
+  {
+    display: flex;
+    text-decoration: none;
+    color: $text-color;
+    padding: 1em 2em;
+    transition: background-color 150ms ease;
+
+    &:hover
+    {
+      background-color: $hover-color;
+    }
+
+    &.active-link
+    {
+      border-bottom: 2px solid $text-color;
+    }
+
+    &.accent-link
+    {
+      background-color: $accent-color;
+    }
+  }
+}
+
+#open-sidebar-button
+{
+  display: none;
+  background: none;
+  border: none;
+  padding: 1em;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+#close-sidebar-button
+{
+  display: none;
+  background: none;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+}
+
+#overlay
+{
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: none;
+}
+
+.skip-link
+{
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: $accent-color;
+  color: $white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+
+  &:focus
+  {
+    opacity: 1;
+    pointer-events: auto;
+    outline: 3px solid $white;
+  }
+}
+
+@media screen and (max-width: 700px)
+{
+  #open-sidebar-button, #close-sidebar-button
+  {
+    display: block;
+  }
+
+  nav
+  {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(15em, 100%);
+    z-index: 10;
+    border-left: 1px solid $hover-color;
+    transition: right 300ms ease-in-out;
+
+    &.show
+    {
+      right: 0;
+    }
+
+    &.show ~ #overlay
+    {
+      display: block;
+    }
+
+    ul
+    {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    a
+    {
+      width: 100%;
+      padding-left: 2.5em;
+
+      &.active-link
+      {
+        border-bottom: none;
+      }
+    }
+
+    .home-li
+    {
+      margin-right: unset;
+    }
+  }
+}
+
+/*--------- SEÇÃO DE INFORMAÇÕES LEGAIS ---------*/
+
+#info-section
+{
+  padding: 2em 0;
+  background: $bg-dark;
+
+  .info-container
+  {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+  }
+
+  .info-card
+  {
+    flex: 1 1 220px;
+    min-width: 220px;
+    background: $bg-card;
+    border-radius: 16px;
+    padding: 2em 1.5em;
+    box-shadow: 0 2px 16px $shadow-light;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover
+    {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px $shadow-strong;
+    }
+
+    img
+    {
+      width: 48px;
+      margin-bottom: 0.7em;
+    }
+
+    h4
+    {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+      color: $white-soft;
+    }
+
+    p
+    {
+      color: $gray-soft;
+      font-size: 1em;
+      opacity: 0.85;
+    }
+  }
+}
+
+@media (max-width: 700px)
+{
+  #info-section
+  {
+    .info-container
+    {
+      flex-direction: column;
+      gap: 1.2em;
+      padding: 0 1em;
+    }
+  }
+}
+
+/*--------- FOOTER ---------*/
+
+footer
+{
+  background: $footer-bg;
+  color: $white-soft;
+  padding: 0;
+  margin-top: 3em;
+
+  .footer-inner
+  {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 24px 24px;
+
+    .top
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 48px;
+      text-align: center;
+
+      h2
+      {
+        font-size: 2em;
+        font-weight: 600;
+      }
+
+      button
+      {
+        border: 0;
+        font-family: inherit;
+        background: $footer-btn-bg;
+        color: $white-soft;
+        border-radius: 40px;
+        padding: 14px 28px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover
+        {
+          background: $footer-btn-bg-hover;
+        }
+      }
+    }
+
+    .bottom
+    {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .logo-content
+    {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 18px;
+
+      .logo
+      {
+        height: 32px;
+      }
+    }
+
+    .socials
+    {
+      display: flex;
+      gap: 18px;
+
+      a
+      {
+        opacity: 0.5;
+        font-size: 22px;
+        transition: opacity 0.2s;
+
+        &:hover
+        {
+          opacity: 1;
+        }
+      }
+    }
+
+    nav
+    {
+      display: flex;
+      gap: 2.5vw;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      ul
+      {
+        display: grid;
+        gap: 10px;
+        text-align: center;
+      }
+
+      h4
+      {
+        opacity: 0.7;
+        letter-spacing: 1px;
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+}
+
+@media (min-width: 590px)
+{
+  .footer-inner
+  {
+    .bottom
+    {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .logo-content
+    {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+
+    nav
+    {
+      ul
+      {
+        text-align: left;
+      }
+    }
+  }
+}
