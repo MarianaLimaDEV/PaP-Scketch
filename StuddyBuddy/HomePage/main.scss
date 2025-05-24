@@ -2,23 +2,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
-// Variáveis SCSS
-$primary-color: #e0cf2e;
-$text-color: #49ad56;
-$hover-color: #81d170;
-$accent-color: #32628f;
+// Cores básicas essenciais
+$primary: #a4a4a4;           // fundo principal
+$primary-hover: #888282;     // hover / variação primária
+$secondary: #c8c8c8;         // destaque secundário
+$text: #2e2e2e;              // texto principal
+$background-dark: #717171;   // fundo escuro (rodapé/modo escuro)
+$background-card: #737373;   // fundo de cards
+$white-soft: #797979;        // branco suave para textos secundários
 
-$bg-dark: #487c64;
-$bg-card: #1b1b6b;
-$white: #c54848;
-$white-soft: #dd8282;
-$gray-soft: #c9c9c9;
-$shadow-light: rgb(119, 71, 71);
-$shadow-strong: #81bea5;
-$footer-bg: $bg-dark;
-$footer-btn-bg: rgb(5, 207, 15);
-$footer-btn-bg-hover: rgba(177, 44, 44, 0.18);
+// Sombras
+$shadow-light: #524e4e;
+$shadow-strong: #494949;
 
+// Reset básico e base
 @mixin reset
 {
   margin: 0;
@@ -31,7 +28,7 @@ $footer-btn-bg-hover: rgba(177, 44, 44, 0.18);
 @mixin base
 {
   font-family: "Fredoka", sans-serif;
-  color: $text-color;
+  color: $text;
   scroll-behavior: smooth;
   min-height: 100vh;
   min-height: 100dvh;
@@ -46,6 +43,7 @@ $footer-btn-bg-hover: rgba(177, 44, 44, 0.18);
 html, body
 {
   @include base;
+  background: $background-dark;
 }
 
 h1, h2, h3, h4, h5, h6, p
@@ -67,15 +65,14 @@ main
 
 nav
 {
-  background-color: $primary-color;
-  border-bottom: 1px solid $hover-color;
+  background-color: $primary;
+  border-bottom: 1px solid $primary-hover;
 
   ul
   {
-    list-style: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1px;
   }
 
   .home-li
@@ -91,38 +88,31 @@ nav
   a
   {
     display: flex;
-    text-decoration: none;
-    color: $text-color;
+    color: $text;
     padding: 1em 2em;
     transition: background-color 150ms ease;
 
     &:hover
     {
-      background-color: $hover-color;
+      background-color: $primary-hover;
     }
 
     &.active-link
     {
-      border-bottom: 2px solid $text-color;
+      border-bottom: 2px solid $text;
     }
 
     &.accent-link
     {
-      background-color: $accent-color;
+      background-color: $secondary;
     }
   }
 }
 
-#open-sidebar-button
-{
-  display: none;
-  background: none;
-  border: none;
-  padding: 1em;
-  margin-left: auto;
-  cursor: pointer;
-}
 
+
+
+#open-sidebar-button,
 #close-sidebar-button
 {
   display: none;
@@ -130,6 +120,11 @@ nav
   border: none;
   padding: 1em;
   cursor: pointer;
+}
+
+#open-sidebar-button
+{
+  margin-left: auto;
 }
 
 #overlay
@@ -149,11 +144,10 @@ nav
   top: 10px;
   left: 10px;
   z-index: 1000;
-  background-color: $accent-color;
-  color: $white;
+  background-color: $secondary;
+  color: $white-soft;
   padding: 12px 24px;
   border-radius: 5px;
-  text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
   transition: opacity 0.3s ease;
@@ -162,13 +156,14 @@ nav
   {
     opacity: 1;
     pointer-events: auto;
-    outline: 3px solid $white;
+    outline: 3px solid $white-soft;
   }
 }
 
 @media screen and (max-width: 700px)
 {
-  #open-sidebar-button, #close-sidebar-button
+  #open-sidebar-button,
+  #close-sidebar-button
   {
     display: block;
   }
@@ -181,7 +176,7 @@ nav
     height: 100vh;
     width: min(15em, 100%);
     z-index: 10;
-    border-left: 1px solid $hover-color;
+    border-left: 1px solid $primary-hover;
     transition: right 300ms ease-in-out;
 
     &.show
@@ -196,8 +191,8 @@ nav
 
     ul
     {
-      width: 100%;
       flex-direction: column;
+      width: 100%;
     }
 
     a
@@ -218,12 +213,12 @@ nav
   }
 }
 
-/*--------- SEÇÃO DE INFORMAÇÕES LEGAIS ---------*/
+/*--------- SEÇÃO DE INFORMAÇÕES ---------*/
 
 #info-section
 {
   padding: 2em 0;
-  background: $bg-dark;
+  background: $background-dark;
 
   .info-container
   {
@@ -239,7 +234,7 @@ nav
   {
     flex: 1 1 220px;
     min-width: 220px;
-    background: $bg-card;
+    background: $background-card;
     border-radius: 16px;
     padding: 2em 1.5em;
     box-shadow: 0 2px 16px $shadow-light;
@@ -267,7 +262,7 @@ nav
 
     p
     {
-      color: $gray-soft;
+      color: $secondary;
       font-size: 1em;
       opacity: 0.85;
     }
@@ -291,7 +286,7 @@ nav
 
 footer
 {
-  background: $footer-bg;
+  background: $background-dark;
   color: $white-soft;
   padding: 0;
   margin-top: 3em;
@@ -300,7 +295,7 @@ footer
   {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 48px 24px 24px 24px;
+    padding: 48px 24px 24px;
 
     .top
     {
@@ -321,7 +316,7 @@ footer
       {
         border: 0;
         font-family: inherit;
-        background: $footer-btn-bg;
+        background: $primary;
         color: $white-soft;
         border-radius: 40px;
         padding: 14px 28px;
@@ -331,7 +326,7 @@ footer
 
         &:hover
         {
-          background: $footer-btn-bg-hover;
+          background: $primary-hover;
         }
       }
     }
@@ -353,7 +348,7 @@ footer
 
       .logo
       {
-        height: 32px;
+        height: 30dvh;
       }
     }
 
@@ -372,29 +367,6 @@ footer
         {
           opacity: 1;
         }
-      }
-    }
-
-    nav
-    {
-      display: flex;
-      gap: 2.5vw;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      ul
-      {
-        display: grid;
-        gap: 10px;
-        text-align: center;
-      }
-
-      h4
-      {
-        opacity: 0.7;
-        letter-spacing: 1px;
-        font-size: 13px;
-        margin-bottom: 4px;
       }
     }
   }
@@ -418,12 +390,9 @@ footer
       margin-bottom: 0;
     }
 
-    nav
+    nav ul
     {
-      ul
-      {
-        text-align: left;
-      }
+      text-align: left;
     }
   }
 }

@@ -11,11 +11,12 @@
 
 html, body {
   font-family: "Fredoka", sans-serif;
-  color: #49ad56;
+  color: #2e2e2e;
   scroll-behavior: smooth;
   min-height: 100vh;
   min-height: 100dvh;
   font-weight: normal;
+  background: #717171;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -31,14 +32,13 @@ main p {
 
 /*--------- NAVBAR ---------*/
 nav {
-  background-color: #e0cf2e;
-  border-bottom: 1px solid #81d170;
+  background-color: #a4a4a4;
+  border-bottom: 1px solid #888282;
 }
 nav ul {
-  list-style: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1px;
 }
 nav .home-li {
   margin-right: auto;
@@ -48,36 +48,31 @@ nav li {
 }
 nav a {
   display: flex;
-  text-decoration: none;
-  color: #49ad56;
+  color: #2e2e2e;
   padding: 1em 2em;
   transition: background-color 150ms ease;
 }
 nav a:hover {
-  background-color: #81d170;
+  background-color: #888282;
 }
 nav a.active-link {
-  border-bottom: 2px solid #49ad56;
+  border-bottom: 2px solid #2e2e2e;
 }
 nav a.accent-link {
-  background-color: #32628f;
+  background-color: #c8c8c8;
 }
 
-#open-sidebar-button {
-  display: none;
-  background: none;
-  border: none;
-  padding: 1em;
-  margin-left: auto;
-  cursor: pointer;
-}
-
+#open-sidebar-button,
 #close-sidebar-button {
   display: none;
   background: none;
   border: none;
   padding: 1em;
   cursor: pointer;
+}
+
+#open-sidebar-button {
+  margin-left: auto;
 }
 
 #overlay {
@@ -95,11 +90,10 @@ nav a.accent-link {
   top: 10px;
   left: 10px;
   z-index: 1000;
-  background-color: #32628f;
-  color: #c54848;
+  background-color: #c8c8c8;
+  color: #797979;
   padding: 12px 24px;
   border-radius: 5px;
-  text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
   transition: opacity 0.3s ease;
@@ -107,11 +101,12 @@ nav a.accent-link {
 .skip-link:focus {
   opacity: 1;
   pointer-events: auto;
-  outline: 3px solid #c54848;
+  outline: 3px solid #797979;
 }
 
 @media screen and (max-width: 700px) {
-  #open-sidebar-button, #close-sidebar-button {
+  #open-sidebar-button,
+  #close-sidebar-button {
     display: block;
   }
   nav {
@@ -121,7 +116,7 @@ nav a.accent-link {
     height: 100vh;
     width: min(15em, 100%);
     z-index: 10;
-    border-left: 1px solid #81d170;
+    border-left: 1px solid #888282;
     transition: right 300ms ease-in-out;
   }
   nav.show {
@@ -131,8 +126,8 @@ nav a.accent-link {
     display: block;
   }
   nav ul {
-    width: 100%;
     flex-direction: column;
+    width: 100%;
   }
   nav a {
     width: 100%;
@@ -145,10 +140,10 @@ nav a.accent-link {
     margin-right: unset;
   }
 }
-/*--------- SEÇÃO DE INFORMAÇÕES LEGAIS ---------*/
+/*--------- SEÇÃO DE INFORMAÇÕES ---------*/
 #info-section {
   padding: 2em 0;
-  background: #487c64;
+  background: #717171;
 }
 #info-section .info-container {
   max-width: 900px;
@@ -161,16 +156,16 @@ nav a.accent-link {
 #info-section .info-card {
   flex: 1 1 220px;
   min-width: 220px;
-  background: #1b1b6b;
+  background: #737373;
   border-radius: 16px;
   padding: 2em 1.5em;
-  box-shadow: 0 2px 16px rgb(119, 71, 71);
+  box-shadow: 0 2px 16px #524e4e;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 #info-section .info-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 32px #81bea5;
+  box-shadow: 0 8px 32px #494949;
 }
 #info-section .info-card img {
   width: 48px;
@@ -179,10 +174,10 @@ nav a.accent-link {
 #info-section .info-card h4 {
   font-size: 1.2em;
   margin-bottom: 0.5em;
-  color: #dd8282;
+  color: #797979;
 }
 #info-section .info-card p {
-  color: #c9c9c9;
+  color: #c8c8c8;
   font-size: 1em;
   opacity: 0.85;
 }
@@ -196,15 +191,15 @@ nav a.accent-link {
 }
 /*--------- FOOTER ---------*/
 footer {
-  background: #487c64;
-  color: #dd8282;
+  background: #717171;
+  color: #797979;
   padding: 0;
   margin-top: 3em;
 }
 footer .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 48px 24px 24px 24px;
+  padding: 48px 24px 24px;
 }
 footer .footer-inner .top {
   display: flex;
@@ -221,8 +216,8 @@ footer .footer-inner .top h2 {
 footer .footer-inner .top button {
   border: 0;
   font-family: inherit;
-  background: rgb(5, 207, 15);
-  color: #dd8282;
+  background: #a4a4a4;
+  color: #797979;
   border-radius: 40px;
   padding: 14px 28px;
   font-size: 1em;
@@ -230,7 +225,7 @@ footer .footer-inner .top button {
   transition: background 0.2s;
 }
 footer .footer-inner .top button:hover {
-  background: rgba(177, 44, 44, 0.18);
+  background: #888282;
 }
 footer .footer-inner .bottom {
   display: flex;
@@ -245,7 +240,7 @@ footer .footer-inner .logo-content {
   margin-bottom: 18px;
 }
 footer .footer-inner .logo-content .logo {
-  height: 32px;
+  height: 30dvh;
 }
 footer .footer-inner .socials {
   display: flex;
@@ -258,23 +253,6 @@ footer .footer-inner .socials a {
 }
 footer .footer-inner .socials a:hover {
   opacity: 1;
-}
-footer .footer-inner nav {
-  display: flex;
-  gap: 2.5vw;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-footer .footer-inner nav ul {
-  display: grid;
-  gap: 10px;
-  text-align: center;
-}
-footer .footer-inner nav h4 {
-  opacity: 0.7;
-  letter-spacing: 1px;
-  font-size: 13px;
-  margin-bottom: 4px;
 }
 
 @media (min-width: 590px) {
